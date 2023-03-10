@@ -1,0 +1,127 @@
+1. create a one aws account, change alias naem and observe iam url before and after
+2. check cloudtrail
+3. check trustedadvisor
+4. create a iam role and attach policy
+5. create iam role for lambda and give cloudwatch
+6. access aws resources from local(laptop)
+7. check in your laptop aws credentails path
+A. c/users/devops/.aws
+8. create admin user and give administration policy 
+9. configure aws cli in your local
+10. describe regions
+11. describe s3
+23/02/02/2023
+===============
+12. describe iam-users
+13. create ec2 and find that cloudtrail
+check the event name and check the arn
+14. create ec2
+15. create a cost calculation per ec2 and make a link
+16. check limits and increase the lemits with supprot ticket observe the case ticket
+17. create a ec2 machine and attach extra volume
+18. status check in instance
+
+24/02/2023  ---------   class-14
+============         ===============
+19. set up html application top of ec2
+20. connect ssh to ec2
+21. observe your ip address (search whatismyip in browser)
+22. both should math, do traceroute from ec2 to local
+
+28-02-2023 ------  class-15
+==========       ===========
+1. check id is their or not
+A. id root
+id ec2-user
+2. create connect-refused and slove it
+
+01-3-2023                 class-16
+============= ---------- ===========
+23. install nginx on ec2 
+24. install docker on ec2 and enable as os service 
+25. create a shell script to install apache and enable 
+os level service , check process running or not , 
+check port is listening or not.
+26. create an apache shell script with userdata
+and check the userdata in the console. userdata,stop, 
+observe public ip change, 
+27. assign elastic ip address, observe , stop and
+ start observe public ip will not change
+28. create own ami (apache ami) = os + apache 
+copy ami from mumbai to singapore.
+launch my own ami and observe the 
+
+03-03-2023 ------- class-17
+===========       ===========
+29. step up the apache software using apache userdata
+A. #!/bin/bash
+yum install httpd -y
+systemctl start httpd
+systemctl enable httpd
+netstat -anlp | grep -w "80"
+ps -ef | grep httpd
+30. check availability zones another regions
+mumbai - 2
+n.verginia - 6
+ohio - 
+31. create sg add above rules
+32. create ec2 in one 1az
+33. ec2 to wanted access the page s3
+A. for example one static application we are running on ec2 machine, so we divert ec2 machine to s3
+betore we have to attach iam role, then we can give that permissions relating to s3
+iam role attach to ec2 machine
+aws s3 ls (no out put)
+create a s3 bucket(aws s3 mb s3://anand-s3/)
+34. set up static website with userdata
+
+03-03-2023 ----- class18
+=============  ==========
+35. create ec2 and do ping (fail), make it work and ping and disable again.
+36. check billing and observe the regions and see the ec2 running regions.
+37. I have a 100 instances in that instnaces i have to findout 1 instnace is running or not how to find out
+38. application(ec2)
+how many sg:3
+1)lb - sg
+httpd ---- 80 ---- 0.0.0.0/0
+2)bastion - sg
+ssh ---- 22 --- vpn ip
+3)application - sg
+ssh ---- 22 --- bastion-sg
+lb ---- 80 ---- lb-sg
+
+39)create ec2
+1. bastion ec2 ---- attach bastionsg ---ec2
+2. application ec2(userdata) ---- attach appliation-sg  
+3. create lb -- attach lb-sg
+associate application - ec2 to load balancer  
+
+04-03-2023 ----- class-19
+==========     ============
+40. create bastion, lb, nginx on top if ec2
+41. download in my local and upload to s3
+download in ec2
+
+06-03-2023 -------- class-20
+===========        ===========
+42. copy the pem (privatekey) from local to bastion(ec2)
+ssh -i privatekey user@publicip
+scp -i privatekey filename to copy user@publicip:/path
+ex: scp -i pem pem ec2-user@publicip:/home/ec2-user/
+43. telnet lab for working port and not working port from bastion to application server
+
+08-03-2023 ------- class-21
+===========      ===========
+
+09-03-2023 ------- class-22
+==========       ===========
+44. create nlb and attach bastion
+A. ssh key.pem ec2-user@nlb-endpoint
+
+10-03-2023 ------ class-23
+==========     =============
+45. create autoscaling
+1. instance launch --- nginx --- application
+ami - backup
+launch configuration
+launch template
+create autoscaling

@@ -1,0 +1,9 @@
+1. aws cli
+2. packer(to create golden ami using packer tool)
+3. git bash
+4. vs code
+we use minitoring tools: (cpu,memory,network,disc,requests)
+cloudwatch(paid)
+grafana(opensource)
+datadog(paid)
+appdynamic(paid)

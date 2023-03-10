@@ -1,0 +1,199 @@
+1. what is the recomendations for the security you suggest?
+A. In aws we suggest never login with rootuser and never share user credentials with others and enable mfa
+2. How can i check port is open to outside?
+A. Yes we can use the command telnet and give the private ip it will show port is open or not
+3. I wanted to run a application in cloud and need to give to outside?
+A. We can go for public ip (or) load balancer endpoint (or) dns name
+4. which protocal secures over transit?
+A. https
+5. how to check svc running on which port number?
+6. I wanted to get specific port open or not?
+7. check port is open to outside?
+8. I have a name, wanted to find ip address?
+9. I have a www.xyz.com, tell me how it works?
+10. what is image?
+11. what is instance?
+12. difference between image and instance?
+13. can we take instance backup?
+14. difference between ami and snapshot?
+15. what type of instance types you are using in your project?
+16. tell me specific type of instance you are using and what cpu and ram they have?
+17. what type of ami you are using in your project?
+18. how many instances running in your project?
+19. i did setup of m5.2x.large - can we change instance type to c5.4x.large?
+20. what instance type your using in your project?
+21. can we modify instance type?
+22. can we modify ebs volume?
+23. what services using in your project?
+24. what is sso?
+A. using one user name and password to access many aws accounts and in the organigation we are login with sso to aws account.
+and use this one user management is very easy.
+25. what is ad?
+26. what is managed policy?
+27. what is custom policy?
+28. what is inline policy?
+A. inline policy is we have to given 1 user and 1 policy only
+29. what is assume role?
+A. assume role means we will get the a.k and s.k along with session key. so it is a temporarly store credentails
+30. Can you give me a.k and s.k?
+A. which account
+what permissions do you have - policy
+31. when do we use a.k s.k?
+32. what info we need connting to ec2 to s3?
+A. in aws svc to svc authentication we are use iam role
+security tip
+if one svc to connect with other svc
+don't use a.k/s.key
+use iam role
+create a role - assign poicy -- attach role to ec2
+role also generate a.k/s.key internally those are call temporarly store
+33. what is lambda?
+34. difference between ec2 and lambda?
+ec2: ec2 is we are going to continouly run the application we go for ec2
+lambda: lambda is more cost compart with ec2, and lambda is using for example some applications users will be access rearly we use lambda when ever customers will be come then only application will be, other time application is down so lambda trigger the application
+35. what is trusted entity?
+A. trusted entity means who is access the role ex: ec2
+36. how to get list of regions usng aws cli?
+A. aws ec2 describe-regions 
+37. how to get list of iam users using aws cli?
+A. aws iam list-users
+38. create ec2?
+A. in which account
+in which regions
+and what instance type -m, c, r
+what ami
+aws ami--we will build our own ami 
+we will upgrade all softwares
+we will remove un-necessary not secured package/softwares
+and install some security agents
+tools to scan ami/instances
+in which vpc and which subnet
+
+39. when application went down what you will be do?
+A. when application went down first we will check the instance status after any cpu and memory go to high 
+we will use the cloudwatch to get the alerts like email/phonecall/ or slack
+40. how do you save cost / tell me cost optimization?
+A. if we are using same instance types in ondemand we go for RI -- to convert RI    
+spot
+======= - spot is a bidding their will be charege as per hour pursupose their will be give to me
+after some days another guy will be come their will be pa extra amount, immediatly remove my instances and give them
+ondemand:
+=========
+by default we are creating all instances in ondemand
+41. what is cpu utilization and loadaverage?
+A. cpu utilization:
+====================
+ means how much cpu is using application and os we will be see using linux command in server, we can use top command it will be show how much of utilizing the cpu, if the cpu is
+will be reach 70% above we will get the alerts in cloudwatch and monitoring tools we are using grafana and prometheus, so one we will get the alerts,we are increase immediatly the resources.
+atleast we will leave the 2 cpu for os and another cpu we will use applications, so incase we are not leave the cpu for os, the server will be not work.
+loadaverage:
+=============
+loadaverage is we will check uptime and top command use we will check the loadaverage, loadaverage is 100 percentage are there 
+so when we use uptime command it will be show total 3 columns 1 st one is it will show 1 minute once and 2 nd column is it will show every 5 minutes load average, and 3 rd column is it will show every 15 minutes show the load average with percentage.
+42. how to find your region in ec2 server?
+A. we are using metadata url find the region 
+for example: curl httpd://169.254.169.254/region
+43. whwat  are the ebs volumes type?
+A. general purpose(gp2/gp3(gp3 is a latest hardware))
+magnetic
+provision(io1/io2)(it is very speed and it is very cost compare with magnetic)this is megarity using databases
+cold
+throughput
+44. if we have  status checks 0/2 or 1/2  what do you do?
+A. check which status failed
+if the status is system side that is aws side problem that time you can stop and start the machine
+and another system is instance check failed we can check cpu/ram/memrory 
+45. can we monitor memory in cloud watch?
+A. yes we can monitor memory in cloudwatch but by default memory is desabled in cloudwatch so we can install some software
+46. what is hypervisor?
+A. hypervisor means per supose i have a windows server os only we can run only application top of windows os
+but we can use hypervisor we can run multiple os 
+vertualization is mained by the aws so we can run multiple os 
+cpu = vcpu
+ram = vram
+eath = veath
+48. why we go aws console?
+A. In aws we create the infra so that's why we go for aws console for example iam, ec2 many services
+49. why we login server?
+A. to login the server we check application logs and metrics and to stop applications and start applications and install the applications, then connetiviry one server to another server we go for server
+50. can we go 1 az multiple subnets?
+A. yes we can go
+51. what is security group?
+A. security group is a nothing but firewall
+it is provide the security ec2 level
+in security group have a inbound(ingress) and outbound(egress)
+it is a statefull ------ (allow only ingress/dont touch egress)
+we allow needed ports in inbound rules
+we dont have deny rules (we cant deny ip address)
+52. sg vs nacl
+A. sg:
+sg is a statefull -- why because in sg have we touched only inbound rules, that's why it is statefull
+allow only inbound rules -- only ec2
+nacl:
+nacl is a stateles-- why because in nacl we are touched inbound and outbound rules that's why it is stateless
+we allow inbound and allow outbound -- only to subnet
+we can restrict users ip addresses in nacl
+
+53. difference between ping and telnet?
+those are we using ec2 machine is running or not
+A. telnet ip and port
+for example:
+telnet privateip 22
+telnet privateip 80
+
+ping: 
+ping publicip -icmp
+
+54. what are aws services  you are using in your project?
+A. In my project we using uproxmetly 17 to 22 services
+compute - ec2 - loadbalancers - autoscaling
+storage - s3 - rds - ebs - cloudfront
+network - vpc - route53
+security - iam
+Other services - cloudwatch, cloudtrail, eks, ecr, sns so  many services we have worked on
+
+55. difference between ami backed up ebs volume and ami backed up instance store volume
+A. ami backed up ebs volume: stop and start ---- data will exist it means we will get back the data
+ami backed up instance volume: stop and start ------- data will erase it means we didn't get back data
+
+56. can we attatch snapshot to ec2? no
+A. snapshot we will convert to volume then we will attach to ec2
+can we convert snapshot into ami - yes, root volume backup snapshot
+57. can we connect at a time multiple accounts? yes
+58. what does loadbalancer does?
+A. load balancing
+security
+health check
+it makes application HA
+distributes the traffic
+59. what is sticky session?
+A. in a session all the requets send to one ec2 mechine
+send all requets in a session to same ec2
+60. what does autoscaling?
+A. autoscaling is unhealty will get replaced and if you terminate ec2, it brings another ec2
+based on metric target, launch another ec2
+61. How do you make sure application without going down?
+A. create lb
+spread ec2 across multiple az's
+take ami backup and snapshot
+enable autoscaling
+62. difference betweenn alb and nlb layer?
+A. nlb: 
+l4 layer (transport layer and network layer)
+static ip assigned
+it understand tcp/tls protocals
+it operates very speed transmission
+alb:
+l7 layer(application layer)
+alb in wont be static and keeps changing
+it will understand http and https protocals
+it will have more requests headers and responce headers
+responce codes: 10x, 20x, 30x, 40x, 50x
+63. we can attach bastion to nlb?
+A. benfits:
+security to bastion
+if we stop and start bastion, in case we are not using lb for bastion, we stop and start bastion ip will change, we can attach 
+nlb endpoint to bastion, why because nlb have a static ip.
+64. diff between get and post?
+A. get is used for light weight data request and responce
+post is used forr data weight is high and also other use cases.

@@ -1,0 +1,4 @@
+#!/bin/bash
+amazon-linuc-extras nginx1
+systemctl start nginx
+systemctl enable nginx 

@@ -1,0 +1,27 @@
+1. Devops lifecycle
+======================
+1. plan- in this stage planing to business requirment and end-users feedback, and create a project roadmap total planing in this stage
+2. code- to give the application to end-users, we first we need code, so with out developers we don't do anything, so developers write the code in this stage
+3. build- in this stage, developers complete the task, they commit the code in share reposistories then we take the code, for example java based applications we are using build tools maven
+4.test- once build is over, we test the code, so testing purpose we are using lower environments, so here we will check the applications is properly working or not
+5. release- once test is completed to deploy on the production environment at this phase. 
+6. deploy- in this stage infrastructure as a code helps build the production environment
+7. operation- this stage is the release is live now use to customers. The operations team at this stage takes care of server configuring and provisioning using like ansible
+8. monitor- ones this are all stages is done, this stage is monitor everything that means collecting the applications data, and monitor entire environment.
+
+2. maven lifecycle:
+====================
+1. validate- this step is validates if the project structure is correct or not. for example it will check all of the depencies downloaded
+2. compile- it compile the source code, converts the .java files to .classes and stores the classed in the target/classed folders   
+3. test- it runs unit test for the project
+4. package- this step is package the compiled code some format war, ear, or jar
+5. install- this step is install the packaged code to the local maven reposistory
+6. deploy- it copies to the code to the remote reposistory 
+
+3. linux architecture
+======================
+in linux archiitecture first have a shell
+on shell we are typing the commands
+the shell is search to the commands is correct or not and checks syntax
+then command is correct it will forword to the kernal
+then the kernal is convert to low level language to high level language

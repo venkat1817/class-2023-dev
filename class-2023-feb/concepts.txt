@@ -1,0 +1,22 @@
+1. iam - 
+==========
+users
+groups
+roles
+policies
+2. cloudtrail
+===============
+in cloudtral we are using auding purpose, so here we will check how many users active or inactive and which user delete and create we will check all use cloudtrail
+security tip: always enable cloudtrail to your account. and it will be track one service to another service
+
+3. trustedadvisor
+===================
+trustedadvisor is used to give the suggetions cost wise, performance wise, and security wise treir will be give all suggitions 
+and it will be tell your account is hacked, please enable the mfa these are all advise trustedadvisor
+freequently check trusted advisor notificatons.
+4. lambda
+5. cloudwatch
+6. vpc
+7. trustedadvisor
+8. Billing ---- global
+9. s3

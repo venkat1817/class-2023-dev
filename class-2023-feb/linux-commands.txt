@@ -1,0 +1,20 @@
+ssh -- 22
+httpd -- 80
+netstat -anlp | grep 22  ------- with in server we will check port is listening or not
+telnet ---------- this command we will check one server to another server connectivity
+telnet private ip 80
+whoami -which user we have ex: root
+sudo su - root- switch ec2-user to root user
+id root - 
+pwd - it will give path where you 
+free -m ---- how much ram
+free -g
+curl -I http://169.254.169.254/latest/metadata/
+echo "echo 3 > /proc/sys/vm/drop_caches" --- it is check there is any bug in application we will check use this command
+and free -m
+ping public ip --------- ping is by default is disable, so we have to enable go to sg and enable
+sg --- all icmp ipv4-------0.0.0.0/0
+and ping is using my ec2 machine is rechable or not
+ping and telnet we are using both are same
+DDOS---- by default one port is supported 1024 
+whoami - which user ------- ec2-user or root

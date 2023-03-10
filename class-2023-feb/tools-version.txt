@@ -1,0 +1,6 @@
+aws cli version - 2.9.7
+python - 3.
+git version - 2.38
+vs code
+intellej - alternative to vs code
+apache - alternatice nginx and jbos
