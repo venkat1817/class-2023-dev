@@ -1,0 +1,8 @@
+nginx
+======
+apache / nginx : /etc/httpd/httpd.conf --Listen 80 ---Listen yourOwnPort 
+
+
+apache
+======
+conf/server.xml ---port change 

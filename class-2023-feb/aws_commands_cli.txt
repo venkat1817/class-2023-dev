@@ -2,5 +2,5 @@
 2. aws s3 cp s3://buckername/app.zip .  ----- s3 ro local
 3. aws sts get-caller-identity
 4. aws configure --profile account2
-5.aws s3  mb s3://buckername/
+5.aws s3  mb s3://buckername/   -------make a bucket create
 aws s3 ls --profile a2
